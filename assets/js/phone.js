@@ -21,15 +21,15 @@ function Phone(id, brand, model, color, price, ram, yearOfProduction) {
 }
 
 const phones = [];
-const PHONES_COUNT = 15;
+const PHONES_COUNT = 10;
 
 for (let i = 0; i < PHONES_COUNT; i++) {
   const phone = new Phone(
     i + 1,
     Math.random() < 0.5 ? 'iPhone' : 'Samsung',
-    `Series ${Math.random() > 0.5 ? 'Economy' : 'Premium'} ${Math.trunc(
-      Math.random() * 20
-    )}`,
+    `Series ${Math.random() > 0.5 ? 'Economy' : 'Premium'} ${
+      1 + Math.trunc(Math.random() * 20)
+    }`,
     Math.random() > 0.5 ? 'Black' : 'Gold',
     1000 + Math.trunc(Math.random() * 7000),
     4 + Math.trunc(Math.random() * 16),
@@ -55,7 +55,6 @@ function getPhoneImage(brand, color) {
   } else if (brand === 'iPhone' && color === 'Gold') {
     return 'https://cdn.x-kom.pl/i/setup/images/prod/big/product-new-big,,2023/9/pr_2023_9_12_22_40_1_192_00.jpg';
   }
-  // Domyślne zdjęcie na wypadek błędu
   return 'https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_149303596?x=536&y=402&format=jpg&quality=80&sp=yes&strip=yes&trim&ex=536&ey=402&align=center&resizesource&unsharp=1.5x1+0.7+0.02&cox=0&coy=0&cdx=536&cdy=402';
 }
 
@@ -79,3 +78,13 @@ for (let i = 0; i < phones.length; i++) {
     </article>
   `);
 }
+
+// Знайти середню ціну телефонів
+
+let avgPrice = 0;
+for (let i = 0; i < phones.length; i++) {
+    avgPrice += phones[i].price;
+}
+
+avgPrice = Math.round(avgPrice/(phones.length));
+console.log(avgPrice);
