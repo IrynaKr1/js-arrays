@@ -83,8 +83,36 @@ for (let i = 0; i < phones.length; i++) {
 
 let avgPrice = 0;
 for (let i = 0; i < phones.length; i++) {
-    avgPrice += phones[i].price;
+  avgPrice += phones[i].price;
 }
 
-avgPrice = Math.round(avgPrice/(phones.length));
+avgPrice = Math.round(avgPrice / phones.length);
 console.log(avgPrice);
+
+// Знайти кількість телефонів з RAM 4, 6, 8, 12 ГБ
+let ram4 = 0;
+let ram6 = 0;
+let ram8 = 0;
+let ram12 = 0;
+let ramOther = 0;
+
+for (let i = 0; i < phones.length; i++) {
+  if (phones[i].ram === 4) {
+    ram4++;
+  } else if (phones[i].ram === 6) {
+    ram6++;
+  } else if (phones[i].ram === 8) {
+    ram8++;
+  } else if (phones[i].ram === 12) {
+    ram12++;
+  } else {
+    ramOther++;
+  }
+}
+
+console.log('--- RAM ---');
+console.log('RAM4', ram4);
+console.log('RAM6', ram6);
+console.log('RAM8', ram8);
+console.log('RAM12', ram12);
+console.log('RAM other', ramOther);
