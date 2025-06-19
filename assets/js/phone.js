@@ -21,7 +21,7 @@ function Phone(id, brand, model, color, price, ram, yearOfProduction) {
 }
 
 const phones = [];
-const PHONES_COUNT = 10;
+const PHONES_COUNT = 50;
 
 for (let i = 0; i < PHONES_COUNT; i++) {
   const phone = new Phone(

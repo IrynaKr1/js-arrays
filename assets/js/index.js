@@ -31,10 +31,8 @@ console.groupEnd();
 console.group('Ітерація через масив за допомогою циклів');
 
 //Вивести елементи з парними індексами.
-for (let i = 0; i < numbers.length; i++) {
-  if (i % 2 === 0) {
-    console.log(`Індекс ${i}: ${numbers[i]}`);
-  }
+for (let i = 0; i < numbers.length; i + 2) {
+  console.log(`Індекс ${i}: ${numbers[i]}`);
 }
 
 // Знайти добуток елементів масиву
@@ -68,21 +66,27 @@ console.log(numbersMap);
 // Вивести елементи масиву, зведені у куб
 numbers.forEach((n) => console.log(n ** 3));
 
-// Визначити індекс елемента, квадрат якого дорівнює 100, 
-// і видалити його, або видати діагностичне повідомлення, 
+// Визначити індекс елемента, квадрат якого дорівнює 100,
+// і видалити його, або видати діагностичне повідомлення,
 // якщо такого елементу не існує.
 
-const numberIndex = numbers.findIndex (n => n ** 2 === 100);
+const numberIndex = numbers.findIndex((n) => n ** 2 === 100);
 
 if (numberIndex !== -1) {
-    numbers.splice(numberIndex, 1);
+  numbers.splice(numberIndex, 1);
 } else {
-    console.log('Такого елементу не існує');
+  console.log('Такого елементу не існує');
 }
 // Перевірити, чи всі елементи масиву є парними числами
-console.log('чи всі елементи масиву є парними числами', numbers.every(n => n%2 ===0));
+console.log(
+  'чи всі елементи масиву є парними числами',
+  numbers.every((n) => n % 2 === 0)
+);
 
 // Перевірити, чи є у масиві бодай один від'ємний елемент
-console.log("чи є у масиві бодай один від'ємний елемент", numbersWithZero.some(n => n < 0));
+console.log(
+  "чи є у масиві бодай один від'ємний елемент",
+  numbersWithZero.some((n) => n < 0)
+);
 
 console.groupEnd();
