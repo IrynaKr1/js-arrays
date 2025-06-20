@@ -31,7 +31,7 @@ console.groupEnd();
 console.group('Ітерація через масив за допомогою циклів');
 
 //Вивести елементи з парними індексами.
-for (let i = 0; i < numbers.length; i + 2) {
+for (let i = 0; i < numbers.length; i += 2) {
   console.log(`Індекс ${i}: ${numbers[i]}`);
 }
 
